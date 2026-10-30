@@ -1,0 +1,12 @@
+{
+  "name": "ayush-portfolio",
+  "version": "1.0.0",
+  "description": "Modern developer portfolio website for Ayush Kumar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "Ayush Kumar",
+  "license": "MIT"
+}

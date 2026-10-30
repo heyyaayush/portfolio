@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Kumar | Full-Stack Software Engineer & Web Architect</title>
+  <meta name="description" content="Official website and developer portfolio of Ayush Kumar. Full-Stack Software Engineer specializing in modern scalable web systems, React, Node.js, and cloud architectures.">
+  <meta name="keywords" content="Ayush Kumar, Full-Stack Developer, Software Engineer, React Developer, Node.js Developer, Web Architect, Portfolio">
+  <meta name="author" content="Ayush Kumar">
+  <meta name="theme-color" content="#070913">
+
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ayush Kumar | Full-Stack Software Engineer">
+  <meta property="og:description" content="Explore Ayush Kumar's featured engineering projects, tech stack, and interactive developer playground.">
+  <meta property="og:image" content="./assets/images/avatar.jpg">
+
+  <!-- Phosphor Icons CDN -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css"/>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+
+  <!-- Background Canvas & Ambient Lighting Orbs -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+  <!-- Site Header & Navigation -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="logo" aria-label="Ayush Kumar Home">
+        <div class="logo-badge">AK</div>
+        <div class="logo-text">Ayush<span>.dev</span></div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button id="audio-toggle-btn" class="audio-toggle" title="Toggle UI Sound Effects" aria-label="Toggle Sound">
+          <i class="ph-bold ph-speaker-high"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">Let's Connect</a>
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Open mobile menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-nav-drawer" id="mobile-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <div class="logo">
+        <div class="logo-badge">AK</div>
+        <div class="logo-text">Ayush<span>.dev</span></div>
+      </div>
+      <button class="modal-close-btn" id="mobile-drawer-close" onclick="document.getElementById('mobile-drawer').classList.remove('open')">
+        <i class="ph-bold ph-x"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link">About Me</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills & Stack</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Featured Projects</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-subtle);">
+      <a href="#contact" class="btn btn-primary" style="width: 100%;">Hire Ayush</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column: Content -->
+          <div class="hero-content">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              <span>Available for New Opportunities</span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="gradient-text">Ayush Kumar</span>
+            </h1>
+
+            <div class="typewriter-wrapper">
+              <span>I am a&nbsp;</span>
+              <span id="typewriter" class="typewriter-text"></span>
+            </div>
+
+            <p class="hero-description">
+              Full-Stack Software Engineer focused on crafting high-impact web applications, scalable backend systems, and fluid, intuitive user interfaces. Building production products with React, TypeScript, Node.js, and modern cloud infrastructure.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Projects</span>
+                <i class="ph-bold ph-arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <i class="ph-bold ph-chat-circle-dots"></i>
+                <span>Get in Touch</span>
+              </a>
+              <button class="btn btn-outline copy-email-btn" data-email="ayush.kumar.dev@gmail.com" title="Copy Ayush's email address">
+                <i class="ph-bold ph-copy"></i>
+                <span>Copy Email</span>
+              </button>
+            </div>
+
+            <!-- Live Developer Stats -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number gradient-text-cyan">3+</div>
+                <div class="stat-label">Years of Experience</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number gradient-text-cyan">20+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number gradient-text-cyan">15+</div>
+                <div class="stat-label">Happy Clients & Teams</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Avatar & Floating Pills -->
+          <div class="hero-visual">
+            <div class="avatar-container">
+              <div class="avatar-ring-glow"></div>
+              <div class="avatar-frame">
+                <img src="./assets/images/avatar.jpg" alt="Ayush Kumar portrait" class="avatar-img" id="hero-avatar">
+              </div>
+
+              <!-- Floating Tech Badges -->
+              <div class="floating-pill pill-react">
+                <div class="pill-icon"><i class="ph-bold ph-atom"></i></div>
+                <span>React & Next.js</span>
+              </div>
+
+              <div class="floating-pill pill-node">
+                <div class="pill-icon"><i class="ph-bold ph-terminal-window"></i></div>
+                <span>Node.js & Go</span>
+              </div>
+
+              <div class="floating-pill pill-cloud">
+                <div class="pill-icon"><i class="ph-bold ph-cloud"></i></div>
+                <span>AWS & Docker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Terminal CLI Component -->
+        <div class="terminal-wrapper" id="terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <div class="terminal-dot dot-red"></div>
+              <div class="terminal-dot dot-yellow"></div>
+              <div class="terminal-dot dot-green"></div>
+            </div>
+            <div class="terminal-title">ayush@dev-box: ~ (Interactive CLI)</div>
+            <div class="terminal-actions">
+              <button class="terminal-quick-btn" data-cmd="skills">skills</button>
+              <button class="terminal-quick-btn" data-cmd="projects">projects</button>
+              <button class="terminal-quick-btn" data-cmd="sudo hire">sudo hire</button>
+              <button class="terminal-quick-btn" data-cmd="help">help</button>
+            </div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div id="terminal-cmd-output">
+              <div class="terminal-output">
+Welcome to Ayush Kumar's interactive dev shell.
+Type <span class="highlight">'help'</span> to see available commands or click the quick action buttons above.
+              </div>
+            </div>
+            <div class="terminal-input-row">
+              <span class="terminal-prompt">visitor@ayush-dev:~$</span>
+              <input type="text" id="terminal-cmd-input" class="terminal-input" placeholder="type command (e.g. skills, projects, about)..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT SECTION
+         ========================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Identity & Philosophy</div>
+          <h2 class="section-title">Driven by Innovation & <span class="gradient-text">Clean Code</span></h2>
+          <p class="section-subtitle">A glimpse into my background, development philosophy, and what fuels my passion for engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Bio Card -->
+          <div class="glass-panel about-card tilt-card">
+            <h3 style="font-size: 1.4rem; margin-bottom: 16px;">Engineering with Passion & Precision</h3>
+            <p class="about-bio-text">
+              I'm Ayush Kumar, a full-stack engineer driven by a passion for solving difficult engineering problems, building user-focused web products, and maintaining clean, well-tested codebases.
+            </p>
+            <p class="about-bio-text" style="color: var(--text-secondary);">
+              I enjoy working across the entire web stack — from creating accessible, responsive UI design systems with React and modern CSS to designing performant database schemas and microservices on Node.js and AWS.
+            </p>
+
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <div class="pillar-icon-box"><i class="ph-bold ph-cpu"></i></div>
+                <div>
+                  <h4 class="pillar-title">Scalable Architecture</h4>
+                  <p class="pillar-desc">Designed with decoupled services, caching layers, and predictable data pipelines.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon-box"><i class="ph-bold ph-paint-brush-household"></i></div>
+                <div>
+                  <h4 class="pillar-title">Pixel-Perfect Aesthetics</h4>
+                  <p class="pillar-desc">Believing that robust backend systems deserve equally astonishing, responsive interfaces.</p>
+                </div>
+              </div>
+              <div class="pillar-item">
+                <div class="pillar-icon-box"><i class="ph-bold ph-shield-check"></i></div>
+                <div>
+                  <h4 class="pillar-title">Reliability & Security</h4>
+                  <p class="pillar-desc">Rigorous test coverage, automated CI/CD pipelines, and zero-compromise security standards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Quick Facts & Quote Card -->
+          <div class="glass-panel quick-facts-card tilt-card">
+            <h3 style="font-size: 1.4rem; margin-bottom: 20px;">Developer Dossier</h3>
+
+            <div class="facts-grid">
+              <div class="fact-box">
+                <div class="fact-title">Location</div>
+                <div class="fact-value">India (IST / Remote)</div>
+              </div>
+              <div class="fact-box">
+                <div class="fact-title">Specialization</div>
+                <div class="fact-value">Full-Stack & Cloud</div>
+              </div>
+              <div class="fact-box">
+                <div class="fact-title">Education</div>
+                <div class="fact-value">B.Tech Computer Science</div>
+              </div>
+              <div class="fact-box">
+                <div class="fact-title">Availability</div>
+                <div class="fact-value" style="color: var(--accent-emerald);">Open for Roles</div>
+              </div>
+            </div>
+
+            <div class="code-quote-box">
+              <code>
+                <span style="color: var(--accent-cyan);">const</span> ayush = {<br>
+                &nbsp;&nbsp;mindset: <span style="color: #a855f7;">"Continuous Learner"</span>,<br>
+                &nbsp;&nbsp;craft: <span style="color: #a855f7;">"Clean, Scalable, Resilient"</span>,<br>
+                &nbsp;&nbsp;mission: <span style="color: #00f59b;">() => "Turn complex problems into elegant solutions"</span><br>
+                };
+              </code>
+            </div>
+
+            <div style="margin-top: 28px; display: flex; gap: 14px;">
+              <a href="#contact" class="btn btn-primary" style="flex: 1;">
+                <i class="ph-bold ph-paper-plane-tilt"></i>
+                <span>Work With Ayush</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS & TECH STACK SECTION
+         ========================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Capabilities & Arsenal</div>
+          <h2 class="section-title">Technical <span class="gradient-text">Proficiency</span></h2>
+          <p class="section-subtitle">Battle-tested languages, frameworks, cloud engines, and toolsets I use to turn ideas into production reality.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-tab skills-filter-tab active" data-filter="all">All Stack</button>
+          <button class="filter-tab skills-filter-tab" data-filter="frontend">Frontend</button>
+          <button class="filter-tab skills-filter-tab" data-filter="backend">Backend & APIs</button>
+          <button class="filter-tab skills-filter-tab" data-filter="cloud">Cloud & DevOps</button>
+          <button class="filter-tab skills-filter-tab" data-filter="database">Databases & Tools</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-container">
+          <!-- Skill Items -->
+          <div class="glass-panel skill-card tilt-card" data-category="frontend">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-file-code"></i></div>
+            <div class="skill-name">TypeScript</div>
+            <div class="skill-tag">Strict Systems</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="95%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="frontend">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-atom"></i></div>
+            <div class="skill-name">React.js</div>
+            <div class="skill-tag">Hooks / Redux</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="96%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="frontend">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-browsers"></i></div>
+            <div class="skill-name">Next.js</div>
+            <div class="skill-tag">SSR / SSG / App Router</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="90%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="backend">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-tree-structure"></i></div>
+            <div class="skill-name">Node.js</div>
+            <div class="skill-tag">Event-Driven Services</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="92%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="backend">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-terminal"></i></div>
+            <div class="skill-name">Express / NestJS</div>
+            <div class="skill-tag">Microservices & APIs</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="88%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="backend">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-brackets-curly"></i></div>
+            <div class="skill-name">Python</div>
+            <div class="skill-tag">FastAPI / AI Scripting</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="85%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="backend">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-cpu"></i></div>
+            <div class="skill-name">Go (Golang)</div>
+            <div class="skill-tag">Concurrency & Networking</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="80%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="database">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-database"></i></div>
+            <div class="skill-name">PostgreSQL</div>
+            <div class="skill-tag">Complex Queries & Indexing</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="90%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="database">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-leaf"></i></div>
+            <div class="skill-name">MongoDB</div>
+            <div class="skill-tag">NoSQL Document Store</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="88%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="database">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-lightning"></i></div>
+            <div class="skill-name">Redis</div>
+            <div class="skill-tag">In-Memory Cache / PubSub</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="85%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="cloud">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-cube"></i></div>
+            <div class="skill-name">Docker</div>
+            <div class="skill-tag">Containerization</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="88%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="cloud">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-cloud"></i></div>
+            <div class="skill-name">AWS Cloud</div>
+            <div class="skill-tag">EC2, S3, Lambda, ECS</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="84%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="cloud">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-git-merge"></i></div>
+            <div class="skill-name">CI/CD & Git</div>
+            <div class="skill-tag">GitHub Actions / Pipelines</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="92%"></div></div>
+          </div>
+
+          <div class="glass-panel skill-card tilt-card" data-category="frontend">
+            <div class="skill-icon-wrap"><i class="ph-bold ph-palette"></i></div>
+            <div class="skill-name">Modern CSS/UI</div>
+            <div class="skill-tag">Tailwind / Animations</div>
+            <div class="skill-level-bar"><div class="skill-level-fill" data-level="94%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS SECTION
+         ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Featured Engineering Work</div>
+          <h2 class="section-title">Selected <span class="gradient-text">Showcase</span></h2>
+          <p class="section-subtitle">A collection of full-stack systems, cloud architectures, and interactive tools built to solve real-world problems.</p>
+        </div>
+
+        <!-- Project Filters -->
+        <div class="filter-tabs">
+          <button class="filter-tab project-filter-tab active" data-filter="all">All Projects</button>
+          <button class="filter-tab project-filter-tab" data-filter="cloud">Cloud & Telemetry</button>
+          <button class="filter-tab project-filter-tab" data-filter="web3">FinTech & Web3</button>
+          <button class="filter-tab project-filter-tab" data-filter="ai">AI Tooling</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: DevFlow -->
+          <article class="glass-panel project-card tilt-card" data-category="cloud">
+            <div class="project-thumbnail">
+              <img src="./assets/images/project-devflow.jpg" alt="DevFlow Observability Dashboard" class="project-img">
+              <span class="project-badge-float">Telemetry Platform</span>
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm open-project-modal" data-project="devflow">
+                  <i class="ph-bold ph-magnifying-glass-plus"></i> View System Architecture
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                <span>DevFlow Observability</span>
+                <i class="ph-bold ph-arrow-up-right"></i>
+              </h3>
+              <p class="project-description">
+                High-throughput distributed metrics and system observability dashboard. Capable of streaming server telemetry, latency heatmaps, and automated alert incidents in real-time.
+              </p>
+              <div class="project-tech-list">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Go</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn open-project-modal" data-project="devflow">
+                  <span>Architecture Deep Dive</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </button>
+                <div style="display: flex; gap: 10px;">
+                  <a href="#" class="social-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="GitHub Code" onclick="event.preventDefault(); showToast('Accessing GitHub repo...', 'info');">
+                    <i class="ph-bold ph-github-logo"></i>
+                  </a>
+                  <a href="#" class="social-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="Live Preview" onclick="event.preventDefault(); showToast('Connecting to live demo...', 'info');">
+                    <i class="ph-bold ph-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Galactic Ledger -->
+          <article class="glass-panel project-card tilt-card" data-category="web3">
+            <div class="project-thumbnail">
+              <img src="./assets/images/project-vault.jpg" alt="Galactic Ledger DeFi Interface" class="project-img">
+              <span class="project-badge-float">Web3 / FinTech</span>
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm open-project-modal" data-project="vault">
+                  <i class="ph-bold ph-magnifying-glass-plus"></i> View System Architecture
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                <span>Galactic Ledger DeFi</span>
+                <i class="ph-bold ph-arrow-up-right"></i>
+              </h3>
+              <p class="project-description">
+                Ultra-responsive multi-chain crypto asset tracking dashboard. Aggregates balances, transaction feeds, and swap liquidity pools with sub-second WebSocket updates.
+              </p>
+              <div class="project-tech-list">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Ethers.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Tailwind</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn open-project-modal" data-project="vault">
+                  <span>Architecture Deep Dive</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </button>
+                <div style="display: flex; gap: 10px;">
+                  <a href="#" class="social-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="GitHub Code" onclick="event.preventDefault(); showToast('Accessing GitHub repo...', 'info');">
+                    <i class="ph-bold ph-github-logo"></i>
+                  </a>
+                  <a href="#" class="social-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="Live Preview" onclick="event.preventDefault(); showToast('Connecting to live demo...', 'info');">
+                    <i class="ph-bold ph-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Neural Architect -->
+          <article class="glass-panel project-card tilt-card" data-category="ai">
+            <div class="project-thumbnail">
+              <img src="./assets/images/project-neuralai.jpg" alt="Neural Architect Studio" class="project-img">
+              <span class="project-badge-float">AI / Machine Learning</span>
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm open-project-modal" data-project="neuralai">
+                  <i class="ph-bold ph-magnifying-glass-plus"></i> View System Architecture
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">
+                <span>Neural Architect Studio</span>
+                <i class="ph-bold ph-arrow-up-right"></i>
+              </h3>
+              <p class="project-description">
+                Node-based visual AI workflow builder. Connects prompt templates, reasoning chains, memory vectors, and multi-agent loops with real-time test execution.
+              </p>
+              <div class="project-tech-list">
+                <span class="tech-tag">React Flow</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">LangChain</span>
+                <span class="tech-tag">PostgreSQL</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn open-project-modal" data-project="neuralai">
+                  <span>Architecture Deep Dive</span>
+                  <i class="ph-bold ph-arrow-right"></i>
+                </button>
+                <div style="display: flex; gap: 10px;">
+                  <a href="#" class="social-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="GitHub Code" onclick="event.preventDefault(); showToast('Accessing GitHub repo...', 'info');">
+                    <i class="ph-bold ph-github-logo"></i>
+                  </a>
+                  <a href="#" class="social-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="Live Preview" onclick="event.preventDefault(); showToast('Connecting to live demo...', 'info');">
+                    <i class="ph-bold ph-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIENCE & JOURNEY SECTION
+         ========================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Career Milestones</div>
+          <h2 class="section-title">Experience & <span class="gradient-text">Journey</span></h2>
+          <p class="section-subtitle">Track record of building impactful software and leading development across high-velocity teams.</p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Timeline 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="glass-panel timeline-card tilt-card">
+              <div class="timeline-header-row">
+                <div>
+                  <h3 class="role-title">Full-Stack Software Engineer</h3>
+                  <div class="company-badge">TechFlow Systems • Bengaluru / Remote</div>
+                </div>
+                <div class="timeline-date">2024 — Present</div>
+              </div>
+              <ul class="timeline-bullets">
+                <li class="timeline-bullet">Architecting and shipping responsive web platforms and customer-facing dashboard features using React, Next.js, and TypeScript.</li>
+                <li class="timeline-bullet">Designed and maintained scalable RESTful APIs and Node.js microservices integrated with PostgreSQL and Redis caching.</li>
+                <li class="timeline-bullet">Streamlined deployment workflows with GitHub Actions CI/CD and containerized environments using Docker.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="glass-panel timeline-card tilt-card">
+              <div class="timeline-header-row">
+                <div>
+                  <h3 class="role-title">Frontend & Web Application Developer</h3>
+                  <div class="company-badge">Digital Pulse Labs</div>
+                </div>
+                <div class="timeline-date">2023 — 2024</div>
+              </div>
+              <ul class="timeline-bullets">
+                <li class="timeline-bullet">Built high-performance, accessible user interfaces with clean state management using React and TailwindCSS.</li>
+                <li class="timeline-bullet">Integrated third-party payment gateways, OAuth authentication flows, and real-time WebSocket notifications.</li>
+                <li class="timeline-bullet">Collaborated closely with product designers to implement pixel-perfect design systems and fluid animations.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Timeline 3 -->
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="glass-panel timeline-card tilt-card">
+              <div class="timeline-header-row">
+                <div>
+                  <h3 class="role-title">Software Engineering Intern</h3>
+                  <div class="company-badge">CodeCraft Innovations</div>
+                </div>
+                <div class="timeline-date">2022 — 2023</div>
+              </div>
+              <ul class="timeline-bullets">
+                <li class="timeline-bullet">Developed and tested reusable UI components using modern HTML5, CSS3, and vanilla JavaScript.</li>
+                <li class="timeline-bullet">Optimized database indexing and queries, improving response times across high-traffic endpoints.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag"><i class="ph-bold ph-paper-plane-tilt"></i> Get In Touch</div>
+          <h2 class="section-title">Let's Discuss Your <span class="gradient-text">Next Project</span></h2>
+          <p class="section-subtitle">Whether you're looking to hire a full-stack engineer, build a new product from scratch, or need architectural consulting — let's talk.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: Contact Information & Availability -->
+          <div class="glass-panel contact-info-card tilt-card">
+            <div>
+              <div class="availability-badge-box">
+                <div class="status-indicator-live">
+                  <span class="live-dot-pulse"></span>
+                  <span class="live-dot"></span>
+                </div>
+                <div class="availability-text">
+                  <div class="availability-headline">Available for Opportunities</div>
+                  <div class="availability-sub" id="live-working-status">Full-Time Roles & Selective Contracts</div>
+                </div>
+              </div>
+
+              <div class="quick-commitments-grid">
+                <div class="commitment-item">
+                  <i class="ph-bold ph-lightning"></i>
+                  <div>
+                    <span class="commitment-title">Response Time</span>
+                    <span class="commitment-val">&lt; 4 Hours</span>
+                  </div>
+                </div>
+                <div class="commitment-item">
+                  <i class="ph-bold ph-map-pin"></i>
+                  <div>
+                    <span class="commitment-title">Location & Zone</span>
+                    <span class="commitment-val">Bengaluru, India (IST)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-channels">
+                <!-- Email Channel -->
+                <div class="channel-item">
+                  <div class="channel-icon"><i class="ph-bold ph-envelope-simple"></i></div>
+                  <div class="channel-content">
+                    <div class="channel-label">Direct Email</div>
+                    <div class="channel-val">ayush.kumar.dev@gmail.com</div>
+                  </div>
+                  <div class="channel-actions">
+                    <button class="channel-btn copy-email-btn" data-email="ayush.kumar.dev@gmail.com" title="Copy Email">
+                      <i class="ph-bold ph-copy"></i>
+                    </button>
+                    <a href="mailto:ayush.kumar.dev@gmail.com" class="channel-btn" title="Open in Email App">
+                      <i class="ph-bold ph-arrow-square-out"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- WhatsApp Channel -->
+                <div class="channel-item channel-whatsapp">
+                  <div class="channel-icon whatsapp-icon"><i class="ph-bold ph-whatsapp-logo"></i></div>
+                  <div class="channel-content">
+                    <div class="channel-label">Instant Chat</div>
+                    <div class="channel-val">WhatsApp Direct</div>
+                  </div>
+                  <div class="channel-actions">
+                    <a href="https://wa.me/?text=Hi%20Ayush,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="channel-btn whatsapp-action" title="Chat on WhatsApp">
+                      <i class="ph-bold ph-chat-circle-dots"></i>
+                      <span>Quick Ping</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- 1:1 Intro Call -->
+                <div class="channel-item channel-call">
+                  <div class="channel-icon call-icon"><i class="ph-bold ph-calendar-check"></i></div>
+                  <div class="channel-content">
+                    <div class="channel-label">Discovery Call</div>
+                    <div class="channel-val">15-Min Intro Chat</div>
+                  </div>
+                  <div class="channel-actions">
+                    <button class="channel-btn call-action" id="open-call-modal-btn">
+                      <i class="ph-bold ph-video-camera"></i>
+                      <span>Schedule</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links & Profiles -->
+            <div class="contact-footer-group">
+              <div class="social-header-label">Professional Profiles</div>
+              <div class="social-links-row">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub Profile">
+                  <i class="ph-bold ph-github-logo"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile">
+                  <i class="ph-bold ph-linkedin-logo"></i>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="X / Twitter">
+                  <i class="ph-bold ph-x-logo"></i>
+                </a>
+                <a href="mailto:ayush.kumar.dev@gmail.com" class="social-icon-btn" title="Send Direct Email">
+                  <i class="ph-bold ph-paper-plane"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="glass-panel contact-form-card tilt-card" id="contact-form-container">
+            <div id="form-inner-content">
+              <div class="form-header-area">
+                <h3 class="form-title">Send a Direct Message</h3>
+                <p class="form-subtitle">Fill out the brief form below and I will respond to your email promptly.</p>
+              </div>
+
+              <!-- Inquiry Intent Selector -->
+              <div class="intent-selection-area">
+                <span class="intent-title">What are you looking to discuss?</span>
+                <div class="intent-pills-grid">
+                  <button type="button" class="intent-pill active" data-intent="Full-Time Role">
+                    <i class="ph-bold ph-briefcase"></i> Full-Time Hire
+                  </button>
+                  <button type="button" class="intent-pill" data-intent="Freelance Project">
+                    <i class="ph-bold ph-rocket-launch"></i> Freelance Project
+                  </button>
+                  <button type="button" class="intent-pill" data-intent="Technical Consultation">
+                    <i class="ph-bold ph-lightbulb"></i> Consultation
+                  </button>
+                  <button type="button" class="intent-pill" data-intent="Saying Hello">
+                    <i class="ph-bold ph-chats-circle"></i> Just Saying Hi
+                  </button>
+                </div>
+              </div>
+
+              <form id="contact-form" novalidate>
+                <input type="hidden" id="form-intent" value="Full-Time Role">
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="form-name" class="form-label">Your Name <span class="required-star">*</span></label>
+                    <div class="input-wrap">
+                      <i class="ph-bold ph-user input-icon"></i>
+                      <input type="text" id="form-name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="form-email" class="form-label">Email Address <span class="required-star">*</span></label>
+                    <div class="input-wrap">
+                      <i class="ph-bold ph-at input-icon"></i>
+                      <input type="email" id="form-email" class="form-input" placeholder="e.g. rahul@company.com" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="form-subject" class="form-label">Subject</label>
+                    <div class="input-wrap">
+                      <i class="ph-bold ph-tag input-icon"></i>
+                      <input type="text" id="form-subject" class="form-input" value="Full-Time Opportunity Discussion">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="form-timeline" class="form-label">Timeline / Urgency</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="ph-bold ph-clock input-icon"></i>
+                      <select id="form-timeline" class="form-input form-select">
+                        <option value="Immediate (< 2 weeks)">Immediate (&lt; 2 weeks)</option>
+                        <option value="Next 1-2 months" selected>Next 1–2 months</option>
+                        <option value="Flexible / Exploring">Flexible / Exploring</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="label-with-meta">
+                    <label for="form-message" class="form-label">Message <span class="required-star">*</span></label>
+                    <span class="char-count" id="message-char-count">0 / 800</span>
+                  </div>
+                  <div class="input-wrap">
+                    <textarea id="form-message" class="form-textarea" maxlength="800" placeholder="Please describe the role, product goals, or what you'd like to collaborate on..." required></textarea>
+                  </div>
+                </div>
+
+                <div class="form-submit-row">
+                  <button type="submit" class="btn btn-primary submit-btn" id="contact-submit-btn">
+                    <i class="ph-bold ph-paper-plane-right"></i>
+                    <span>Send Message</span>
+                  </button>
+                  <div class="privacy-note">
+                    <i class="ph-bold ph-lock-key"></i>
+                    <span>Your details are completely private and never shared.</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- In-Card Success State (Hidden by default) -->
+            <div class="contact-success-card" id="contact-success-state" style="display: none;">
+              <div class="success-icon-badge">
+                <i class="ph-bold ph-check"></i>
+              </div>
+              <h3 class="success-title">Message Sent Successfully!</h3>
+              <p class="success-desc">
+                Thanks for reaching out, <strong id="success-client-name">there</strong>! Your note has been delivered directly to Ayush's inbox.
+              </p>
+              <div class="success-meta-box">
+                <div class="meta-row">
+                  <span>Inquiry Type:</span>
+                  <strong id="success-inquiry-type">Full-Time Role</strong>
+                </div>
+                <div class="meta-row">
+                  <span>Reply Destination:</span>
+                  <strong id="success-client-email">email@example.com</strong>
+                </div>
+                <div class="meta-row">
+                  <span>Expected Response:</span>
+                  <span style="color: var(--accent-emerald);">Within 4–8 Hours</span>
+                </div>
+              </div>
+              <button type="button" class="btn btn-outline" id="reset-contact-form-btn">
+                <i class="ph-bold ph-arrow-counter-clockwise"></i>
+                <span>Send Another Note</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="logo">
+          <div class="logo-badge">AK</div>
+          <div class="logo-text">Ayush<span>.dev</span></div>
+        </a>
+
+        <div class="footer-clock">
+          <span class="footer-clock-dot"></span>
+          <span>India (IST): </span>
+          <span id="live-clock">--:--:-- PM</span>
+        </div>
+
+        <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to top" aria-label="Back to Top">
+          <i class="ph-bold ph-arrow-up"></i>
+        </button>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Ayush Kumar. All rights reserved. Built with precision and modern web standards.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#about" class="nav-link" style="padding: 0;">About</a>
+          <a href="#skills" class="nav-link" style="padding: 0;">Stack</a>
+          <a href="#projects" class="nav-link" style="padding: 0;">Projects</a>
+          <a href="#contact" class="nav-link" style="padding: 0;">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Details Modal -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan); display: flex; align-items: center; gap: 8px;">
+          <i class="ph-bold ph-code"></i> PROJECT ARCHITECTURE & CASE STUDY
+        </div>
+        <button class="modal-close-btn" id="modal-close" aria-label="Close dialog">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Schedule Call Modal -->
+  <div class="modal-backdrop" id="call-modal">
+    <div class="modal-content" style="max-width: 500px;">
+      <div class="modal-header">
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-cyan); display: flex; align-items: center; gap: 8px;">
+          <i class="ph-bold ph-calendar-check"></i> SCHEDULE 1:1 INTRO CALL
+        </div>
+        <button class="modal-close-btn" id="call-modal-close" aria-label="Close dialog">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: 24px;">
+        <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Let's set up a quick 15-minute chat</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6;">
+          Pick your preferred communication platform or request a calendar invite. We can discuss your engineering team needs, technical architecture, or new project.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+          <a href="https://wa.me/?text=Hi%20Ayush,%20I%20would%20like%20to%20schedule%20a%20call%20with%20you!" target="_blank" rel="noopener noreferrer" class="channel-item" style="text-decoration: none;">
+            <div class="channel-icon" style="background: rgba(37, 211, 102, 0.15); color: #25d366;"><i class="ph-bold ph-whatsapp-logo"></i></div>
+            <div>
+              <div class="channel-label">Direct Voice / Chat</div>
+              <div class="channel-val">WhatsApp Audio / Video Call</div>
+            </div>
+            <i class="ph-bold ph-arrow-right" style="margin-left: auto; color: var(--text-muted);"></i>
+          </a>
+
+          <a href="mailto:ayush.kumar.dev@gmail.com?subject=Schedule%201:1%20Call%20with%20Ayush&body=Hi%20Ayush,%20I'd%20like%20to%20schedule%20a%2015-minute%20call.%20My%20preferred%20times%20are:%20" class="channel-item" style="text-decoration: none;">
+            <div class="channel-icon"><i class="ph-bold ph-calendar-plus"></i></div>
+            <div>
+              <div class="channel-label">Email Invite Request</div>
+              <div class="channel-val">Google Meet / Zoom Invite</div>
+            </div>
+            <i class="ph-bold ph-arrow-right" style="margin-left: auto; color: var(--text-muted);"></i>
+          </a>
+        </div>
+
+        <button type="button" class="btn btn-outline" style="width: 100%;" onclick="document.getElementById('call-modal').classList.remove('open')">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main JavaScript Bundle -->
+  <script src="./js/main.js"></script>
+</body>
+</html>
